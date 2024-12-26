@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bookings for {{ event.name }}</title>
+</head>
+<body>
+    <h1>Bookings for {{ event.name }}</h1>
+    <ul>
+        {% for booking in bookings %}
+            <li>{{ booking.user.username }} - {{ booking.date }}</li>
+        {% empty %}
+            <p>No bookings available for this event.</p>
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Form</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h1>Book Your Slot for Event: {{ event.name }}</h1>
+    
+    <form method="post">
+        {% csrf_token %}
+        
+        {{ form.as_p }}  <!-- Renders the form fields -->
+
+        <button type="submit">Submit Booking</button>
+    </form>
+
+    <a href="{% url 'event_detail' event.pk %}">Back to Event Details</a>
+
+</body>
+</html>

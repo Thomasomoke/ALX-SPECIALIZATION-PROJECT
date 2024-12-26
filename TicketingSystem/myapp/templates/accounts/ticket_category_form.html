@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <title>Ticket Categories - {{ event.name }}</title>
+    
+    <h1>Ticket Categories for Event: {{ event.name }}</h1>
+
+    <div class="ticket-categories">
+        {% if event.ticket_categories.exists %}
+            {% for category in event.ticket_categories.all %}
+                <div class="ticket-category card">
+                    <h2 class="card-title">{{ category.name }}</h2>
+                    <p class="card-text">Price: ${{ category.price }}</p>
+                    <p class="card-text">Available: {{ category.available_quantity }} tickets</p>
+
+                    <form method="post" action="{% url 'create_booking' %}" class="booking-form">
+                        {% csrf_token %}
+                        <input type="hidden" name="event" value="{{ event.id }}">
+                        <input type="hidden" name="category_id" value="{{ category.id }}">
+                        <label for="quantity-{{ category.id }}" aria-label="Select ticket quantity">Quantity:</label>
+                        <input type="number" 
+                               id="quantity-{{ category.id }}" 
+                               name="quantity" 
+                               min="1" 
+                               max="{{ category.available_quantity }}" 
+                               placeholder="e.g., 1" 
+                               required>
+                        <button type="submit" class="btn btn-primary">Book Tickets</button>
+                    </form>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>No ticket categories available for this event.</p>
+        {% endif %}
+    </div>
+
+    <a href="{% url 'event_list' %}" class="btn btn-secondary">Back to Events</a>
+
+    <script>
+        // JavaScript for client-side validation
+        document.querySelectorAll('.booking-form').forEach(form => {
+            form.addEventListener('submit', function(e) {
+                const quantityInput = this.querySelector('input[name="quantity"]');
+                const maxQuantity = parseInt(quantityInput.max, 10);
+                const enteredQuantity = parseInt(quantityInput.value, 10);
+
+                if (enteredQuantity > maxQuantity) {
+                    e.preventDefault();
+                    alert(`You cannot book more than ${maxQuantity} tickets.`);
+                }
+            });
+        });
+    </script>
+{% endblock %}

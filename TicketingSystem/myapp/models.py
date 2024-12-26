@@ -51,3 +51,38 @@ class Order(models.Model):
 	def __str__(self):
 		return str(self.product)
 
+class Event(models.Model):
+    STATUS_CHOICES = [
+        ('upcoming', 'Upcoming'),
+        ('ongoing', 'Ongoing'),
+        ('past', 'Past'),
+    ]
+    name = models.CharField(max_length=255)
+    description = models.TextField()
+    date = models.DateTimeField()
+    location = models.CharField(max_length=255)
+    image = models.ImageField(upload_to='event_images/')
+    status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='upcoming')
+    
+    def __str__(self):
+        return self.name
+
+class TicketCategory(models.Model):
+    event = models.ForeignKey(Event, related_name='ticket_categories', on_delete=models.CASCADE)
+    name = models.CharField(max_length=50)  # e.g., General, VIP
+    price = models.DecimalField(max_digits=10, decimal_places=2)
+    available_quantity = models.PositiveIntegerField()
+
+    def __str__(self):
+        return f"{self.name} - {self.event.name}"
+    
+class Booking(models.Model):
+    event = models.ForeignKey(Event, on_delete=models.CASCADE, related_name='bookings')
+    user_name = models.CharField(max_length=255)
+    booking_date = models.DateTimeField(auto_now_add=True)
+    ticket_category = models.CharField(max_length=100)  # Add this field
+    quantity = models.PositiveIntegerField()  # Add this field
+
+
+    def __str__(self):
+        return f"{self.user_name} - {self.ticket_category.name}"

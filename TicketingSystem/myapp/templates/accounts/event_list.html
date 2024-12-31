@@ -5,15 +5,120 @@ Event List
 {% endblock %}
 
 {% block content %}
-<h2>Event List</h2>
-<ul>
+<h2 class="page-title">Event List</h2>
+
+<div class="event-list">
     {% for event in events %}
-        <li>
-            <a href="{% url 'event_detail' event.id %}">{{ event.name }}</a>
-            - {{ event.date }} | {{ event.location }}
-        </li>
+        <div class="event-card {% cycle 'blue-card' 'yellow-card' %}">
+            <h3 class="event-title">
+                <a href="{% url 'create_booking' %}">{{ event.name }}</a>
+            </h3>
+            <p class="event-date"><i class="fa fa-calendar"></i> {{ event.date }}</p>
+            <p class="event-location"><i class="fa fa-map-marker"></i> {{ event.location }}</p>
+        </div>
     {% empty %}
-        <li>No events available.</li>
+        <p class="no-events">No events available.</p>
     {% endfor %}
-</ul>
+</div>
+
+<style>
+    /* General Page Styles */
+    .page-title {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    /* Event List Styles */
+    .event-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        padding: 0 10px;
+    }
+
+    /* Event Card Styles */
+    .event-card {
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .event-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Blue Card */
+    .blue-card {
+        background-color: #3498db; /* Blue */
+        color: white;
+    }
+
+    .blue-card a {
+        color: white;
+    }
+
+    .blue-card a:hover {
+        color: #dfe6e9;
+    }
+
+    /* Yellow Card */
+    .yellow-card {
+        background-color: #fdfd96; /* Pastel Yellow */
+        color: black;
+    }
+
+    .yellow-card a {
+        color: black;
+    }
+
+    .yellow-card a:hover {
+        color: #7f8c8d; /* Dark grey hover */
+    }
+
+    /* Event Title */
+    .event-title {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+
+    /* Event Details */
+    .event-date,
+    .event-location {
+        font-size: 1rem;
+        margin: 5px 0;
+    }
+
+    .event-date i,
+    .event-location i {
+        margin-right: 5px;
+    }
+
+    /* No Events Placeholder */
+    .no-events {
+        text-align: center;
+        font-size: 1.2rem;
+        color: #95a5a6;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .event-card {
+            padding: 15px;
+        }
+
+        .event-title {
+            font-size: 1.25rem;
+        }
+
+        .event-date,
+        .event-location {
+            font-size: 0.9rem;
+        }
+    }
+</style>
 {% endblock %}

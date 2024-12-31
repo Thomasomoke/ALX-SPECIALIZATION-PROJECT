@@ -136,7 +136,7 @@ def create_event(request):
         form = EventForm(request.POST, request.FILES)
         if form.is_valid():
             event = form.save()
-            return redirect('event_list', pk=event.pk)  # Redirect to the event detail page
+            return redirect('event_list')  # Redirect to the event list
     else:
         form = EventForm()
 

@@ -132,3 +132,13 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # LOGIN URL
 LOGIN_URL = '/login/' # This is the URL where the user will be redirected if they are not logged in and try to access a page that requires authentication.
+
+# Email settings
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'omokethomas644@gmail.com'
+EMAIL_HOST_PASSWORD = '0702010158#23'
+
+DEFAULT_FROM_EMAIL = 'EventBooking <omokethomas644@gmail.com>'

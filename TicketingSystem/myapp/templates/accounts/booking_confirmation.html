@@ -1,0 +1,94 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Confirmation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #333;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .confirmation-details {
+            margin-bottom: 20px;
+        }
+
+        .confirmation-details p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .confirmation-details span {
+            font-weight: 600;
+        }
+
+        a.back-btn {
+            display: inline-block;
+            margin-top: 20px;
+            color: #007BFF;
+            text-decoration: none;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        a.back-btn:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Booking Confirmation</h1>
+        
+        <div class="confirmation-details">
+            <p><span>Event:</span> {{ event.name }}</p>
+            <p><span>Event Date:</span> {{ event.date }}</p>
+            <p><span>Your Name:</span> {{ name }}</p>
+            <p><span>Your Email:</span> {{ email }}</p>
+            <p><span>Booking Date:</span> {{ date }}</p>
+            <p><span>Message:</span> {{ message }}</p>
+        </div>
+
+        <a href="{% url 'event_list' %}" class="back-btn">Back to Event Lists</a>
+    </div>
+</body>
+</html>

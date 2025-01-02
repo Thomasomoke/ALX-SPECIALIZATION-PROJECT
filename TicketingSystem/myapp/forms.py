@@ -39,6 +39,8 @@ class TicketCategoryForm(forms.ModelForm):
         
 # Form for Booking
 class BookingForm(forms.ModelForm):
+    ticket_category = forms.ModelChoiceField(queryset=TicketCategory.objects.all(), empty_label="Select Ticket Category")
+    
     class Meta:
         model = Booking
         fields = ['event', 'user_name', 'ticket_category', 'quantity']

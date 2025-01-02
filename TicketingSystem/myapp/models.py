@@ -68,6 +68,11 @@ class Event(models.Model):
         return self.name
 
 class TicketCategory(models.Model):
+    CATEGORY_CHOICES = [
+        ('VIP', 'VIP'),
+        ('VVIP', 'VVIP'),
+        ('Regular', 'Regular'),
+	]
     event = models.ForeignKey(Event, related_name='ticket_categories', on_delete=models.CASCADE)
     name = models.CharField(max_length=50)  # e.g., General, VIP
     price = models.DecimalField(max_digits=10, decimal_places=2)
@@ -77,6 +82,12 @@ class TicketCategory(models.Model):
         return f"{self.name} - {self.event.name}"
     
 class Booking(models.Model):
+    CATEGORY_CHOICES = [
+        ('VIP', 'VIP'),
+        ('VVIP', 'VVIP'),
+        ('Regular', 'Regular'),
+	]
+    
     event = models.ForeignKey(Event, on_delete=models.CASCADE, related_name='bookings')
     user_name = models.CharField(max_length=255)
     booking_date = models.DateTimeField(auto_now_add=True)

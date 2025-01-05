@@ -8,65 +8,66 @@
 **Overview**
 
 
-The Ticketing System is a Django-based web application that simplifies event management by offering features such as user registration,<br> event booking, and ticket categorization. <br> The platform is designed with a focus on providing a seamless user experience, security, and scalability.
+The Ticketing System is a Django-based web application that simplifies event management by offering features such as user registration,<br> event booking, and ticket categorization. <br> <br> The platform is designed with a focus on providing a seamless user experience, security, and scalability. <br> <br>
 **Core Features** <br>
-**User Registration and Authentication:** <br>
+**User Registration and Authentication:** <br> <br>
 Secure user registration with email verification.<br>
 
 Login, "Forgot Password," and "Sign Up" functionalities.<br>
 
-Hashed passwords for enhanced security<br>
-**Event Listings:**
+Hashed passwords for enhanced security<br> <br>
+**Event Listings:** <br> <br>
 Browse available events with details such as date, time, location, and slots.<br>
-Detailed event pages for additional information and registration.<br>
+Detailed event pages for additional information and registration.<br> <br>
 **Booking System:**<br>
 User-friendly booking interface with ticket categorization (e.g., VIP, Regular, Early Bird).<br>
 
-Automatic confirmation emails upon successful booking.<br>
+Automatic confirmation emails upon successful booking.<br> <br>
 **Admin Panel:**
 
 
 Manage events, user registrations, and permissions.
 
 
-Analytics for tracking registrations and popular events.
+Analytics for tracking registrations and popular events. <br>
 **Additional Enhancements**<br>
 **User Profiles:**<br>
 Dashboard for viewing booking history and upcoming events.<br>
 
-Profile updates, including pictures and contact details.
-**Accessibility:**
+Profile updates, including pictures and contact details.<br> <br>
+**Accessibility:** <br>
 WCAG-compliant design with screen reader support.
 
-Keyboard navigation for enhanced accessibility.
-**Scalability:**
+Keyboard navigation for enhanced accessibility. <br> <br>
+**Scalability:** <br>
 
 
 Ready for deployment on cloud platforms like AWS and Heroku.
 
-Caching mechanisms to optimize performance.
+Caching mechanisms to optimize performance. <br><br>
 **Installation**
-**Prerequisites**
+**Prerequisites**<br>
 Python 3.8+
 
 Django 3.2+
 
 PostgreSQL (or SQLite for development)
 
-Node.js and npm (for optional frontend enhancements)
+Node.js and npm (for optional frontend enhancements) <br><br>
 **Setup**
 **Clone the repository:**
 git clone https://github.com/yourusername/ticketing-system.git
 cd ticketing-system
-<br>
+<br><br>
 Create a virtual environment and install dependencies:
 <br>
 python3 -m venv env
 source env/bin/activate
 pip install -r requirements.txt
-<br>
-Configure the database in settings.py:
-<br>
+
+
+**Configure the database in settings.py:**
+<br><br>
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',

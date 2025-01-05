@@ -190,7 +190,7 @@ def create_booking(request):
             booking.customer_email = request.user.email
             booking.save()
             messages.success(request, 'Booking Successful!')
-            return redirect('booking_confirmation')
+            return render(request, 'accounts/booking_confirmation.html')
     else:
         form = BookingForm()
     

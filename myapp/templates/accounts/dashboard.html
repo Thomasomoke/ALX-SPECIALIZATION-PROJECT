@@ -1,0 +1,78 @@
+{% extends 'accounts/main.html' %}
+
+{% block content %}
+<style>
+    /* Glass Effect for Cards */
+    .card {
+        background: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
+        backdrop-filter: blur(10px); /*colo Blur the background behind the card */
+        border: 1px solid rgba(100, 100, 100, 0.3); /* Subtle border */
+        border-radius: 15px; /* Rounded corners */
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); /* Soft shadow */
+        transition: all 0.3s ease-in-out; /* Smooth transitions */
+    }
+
+    /* Hover Effect for Cards */
+    .card:hover {
+        transform: scale(1.05); /* Slightly enlarge on hover */
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+    }
+
+    /* Card Body Styles */
+    .card-body {
+        padding: 2rem; /* Spacing inside the card */
+        color: #333; /* Dark text color */
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Text shadow */
+    }
+</style>
+
+<div class="container my-5">
+    <!-- Welcome Section -->
+    <div class="text-center mb-4">
+        <h1>Welcome to the Ticketing System</h1>
+        <p class="text-muted">Easily manage your bookings and tickets from one platform.</p>
+    </div>
+
+    <!-- Cards Section -->
+    <div class="row">
+        <!-- View Events Card -->
+        <div class="col-md-4">
+            <div class="card shadow-sm">
+                <div class="card-body text-center">
+                    <h5 class="card-title">View Events</h5>
+                    <p class="card-text">Browse all events and manage bookings effortlessly.</p>
+                    <a href="{% url 'event_list' %}" class="btn btn-primary">Go to Events</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Create Booking Card -->
+        <div class="col-md-4">
+            <div class="card shadow-sm">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Create a Booking</h5>
+                    <p class="card-text">Book tickets for events, travels, or other services in minutes.</p>
+                    <a href="{% url 'create_booking' %}" class="btn btn-success">Book Now</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Create Event Card -->
+        <div class="col-md-4">
+            <div class="card shadow-sm">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Create an Event</h5>
+                    <p class="card-text">Host an event and manage attendees seamlessly.</p>
+                    <a href="{% url 'create_event' %}" class="btn btn-warning">Create Event</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Additional Info -->
+    <div class="mt-5 text-center">
+        <h3>Why Choose Us?</h3>
+        <p class="text-muted">Our platform offers a seamless booking experience with reliable ticketing services and 24/7 support.</p>
+    </div>
+</div>
+{% endblock %}

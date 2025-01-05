@@ -104,11 +104,12 @@ python manage.py runserver
 
 **Usage**
 
-**Admin Panel**
+**Admin Panel** (For users with Priviledges) <br>
 Access the admin panel at http://127.0.0.1:8000/admin.
 <br>
 Use the admin interface to create, update, and delete events
 
+![Registration Page](event_images/signup.png)
 
 **User Features**
 Register or log in to view events and make bookings.

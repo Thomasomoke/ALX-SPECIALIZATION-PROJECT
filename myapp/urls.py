@@ -27,8 +27,7 @@ urlpatterns = [
     path('dashboard/', views.dashBoard, name="dashboard"),
 
     
-    path('products/', views.products, name="products"),
-    path('customer/<str:pk>/', views.customer, name="customer"),
+    
     path('create_booking/', views.create_booking, name='create_booking'),
     path('create_event/', views.create_event, name='create_event'),
     path('events/', views.event_list, name='event_list'),
@@ -42,15 +41,5 @@ urlpatterns = [
     path('password_reset_done/', auth_views.PasswordResetDoneView.as_view(template_name='accounts/password_reset_done.html'), name='password_reset_done'),
     path('reset/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(template_name='accounts/password_reset_confirm.html'), name='password_reset_confirm'),
     path('reset_done/', auth_views.PasswordResetCompleteView.as_view(template_name='accounts/password_reset_complete.html'), name='password_reset_complete'),
-
-    #------------ (CREATE URLS) ------------
-    path('create_order/', views.createOrder, name="create_order"),
-   
-    #------------ (UPDATE URLS) ------------
-    path('update_order/<str:pk>/', views.updateOrder, name="update_order"),
-
-
-    #------------ (UPDATE URLS) ------------
-    path('delete_order/<str:pk>/', views.deleteOrder, name="delete_order"),
 
 ]

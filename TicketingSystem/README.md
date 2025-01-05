@@ -3,6 +3,7 @@
 
 
 **Ticketing System and Booking System**
+![Registration Page](event_images/homepage.png)
 
 
 **Overview**
@@ -18,15 +19,18 @@ The Ticketing System is a Django-based web application that simplifies event man
 Secure user registration with email verification.<br>
 
 Login, "Forgot Password," and "Sign Up" functionalities.<br>
+![Registration Page](event_images/login.png)
 
 Hashed passwords for enhanced security<br> <br>
 **Event Listings:** <br> <br>
 Browse available events with details such as date, time, location, and slots.<br>
 Detailed event pages for additional information and registration.<br> <br>
+![Registration Page](event_images/events.png)
 **Booking System:**<br>
 User-friendly booking interface with ticket categorization (e.g., VIP, Regular, Early Bird).<br>
 
 Automatic confirmation emails upon successful booking.<br> <br>
+![Registration Page](event_images/booking.png)
 **Admin Panel:**
 
 
@@ -39,6 +43,7 @@ Analytics for tracking registrations and popular events. <br>
 Dashboard for viewing booking history and upcoming events.<br>
 
 Profile updates, including pictures and contact details.<br> <br>
+![Registration Page](event_images/createevent.png)
 **Accessibility:** <br>
 WCAG-compliant design with screen reader support.
 

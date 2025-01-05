@@ -11,7 +11,9 @@
 The Ticketing System is a Django-based web application that simplifies event management by offering features such as user registration,<br> event booking, and ticket categorization. <br> <br> The platform is designed with a focus on providing a seamless user experience, security, and scalability. <br> <br>
 **Core Features** <br>
 **User Registration and Authentication:** <br> <br>
-![Registration Page](event_images/sign%20up.png)
+
+
+![Registration Page](event_images/signup.png)
 
 Secure user registration with email verification.<br>
 

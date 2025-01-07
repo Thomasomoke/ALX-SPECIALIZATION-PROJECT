@@ -64,46 +64,6 @@ This document provides details about the endpoints in my EVENT EASE Application.
 - **Method:** `GET`
 - **Description:** Displays an overview of user activities, orders, and events.
 
----
-
-## **Product and Customer Management**
-
-### **6. Products**
-- **URL:** `/products/`
-- **Method:** `GET`
-- **Description:** Lists all available products.
-
----
-
-### **7. Customer Details**
-- **URL:** `/customer/<str:pk>/`
-- **Method:** `GET`
-- **Description:** Fetches details for a specific customer.
-
----
-
-## **Order Management**
-
-### **8. Create Order**
-- **URL:** `/create_order/`
-- **Method:** `GET` | `POST`
-- **Description:** Creates a new order.
-
----
-
-### **9. Update Order**
-- **URL:** `/update_order/<str:pk>/`
-- **Method:** `GET` | `POST`
-- **Description:** Updates an existing order.
-
----
-
-### **10. Delete Order**
-- **URL:** `/delete_order/<str:pk>/`
-- **Method:** `GET` | `POST`
-- **Description:** Deletes a specific order.
-
----
 
 ## **Event and Booking Management**
 

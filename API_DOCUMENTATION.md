@@ -2,7 +2,7 @@
 
 This document provides details about the endpoints in my EVENT EASE Application.
 
----
+
 ## **Authentication and User Management**
 
 ### **1. Register User**
